@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fitsSystemWindows="true"
+        tools:context="com.marblelab.projectshowtracker.UI.Shows.ShowsActivity">
+
+        <FrameLayout
+            android:id="@+id/flShowsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+
+        <View
+            android:id="@+id/reveal"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            android:id="@+id/list"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <com.nex3z.togglebuttongroup.MultiSelectToggleGroup
+                android:id="@+id/filter_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:tbgFlow="true"
+                app:tbgChildSpacing="auto"
+                app:tbgChildSpacingForLastRow="align"
+                app:tbgRowSpacing="8dp">
+
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Action"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Action"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Adventure"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adventure"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Drama"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drama"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Science_Fiction"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Science-Fiction"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Crime"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crime"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Thriller"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thriller"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Mystery"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mystery"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Espionage"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Espionage"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Family"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Music"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Romance"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Supernatural"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supernatural"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Horror"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horror"/>
+
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Fantasy"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fantasy"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Travel"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Travel"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Anime"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anime"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Food"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food"/>
+                <com.nex3z.togglebuttongroup.button.LabelToggle
+                    android:id="@+id/Animation"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Animation"/>
+
+
+
+            </com.nex3z.togglebuttongroup.MultiSelectToggleGroup>
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/reveal">
+
+            <View
+                android:id="@+id/sheetTop"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/sheetDark"
+                android:transformPivotY="64dp"
+                android:visibility="invisible" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:id="@+id/scroll"
+                android:visibility="invisible"
+                android:scrollbars="none"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:text="Genres"
+                        android:layout_width="150dp"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_height="32dp"
+                        android:background="@drawable/blank_space" />
+
+                    <TextView
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:text="Rating"
+                        android:layout_width="150dp"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_height="32dp"
+                        android:background="@drawable/blank_space" />
+
+                    <TextView
+                        android:padding="5dp"
+                        android:textAlignment="center"
+                        android:text="Year"
+                        android:layout_width="150dp"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_height="32dp"
+                        android:background="@drawable/blank_space" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+        </FrameLayout>
+
+
+        <View
+            android:id="@+id/bottom_list_background"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:alpha="0"
+            android:background="@drawable/bottom_sheet"
+            />
+
+        <LinearLayout
+            android:id="@+id/bottom_list"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="12dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/cancel" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/apply_filters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="acceptFilters"
+                    android:padding="12dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/filter" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="animate"
+            android:src="@drawable/filter"
+            app:borderWidth="0dp"
+            app:fabSize="normal" />
+</RelativeLayout>

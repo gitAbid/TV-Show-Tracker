@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvDialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:transitionName="transitionTumbnail"
+            android:src="@drawable/goku"
+            android:scaleType="fitXY"
+            android:id="@+id/ivTumbnail"
+            android:layout_width="150dp"
+            android:layout_height="190sp"
+            android:layout_margin="5dp"
+            />
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="10dp"
+            android:layout_margin="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/lrInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivTumbnail">
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:text="UNDER THE DOM"
+                    android:id="@+id/tvShowName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Premier : 2001"
+                    android:id="@+id/tvYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Seasons : 3"
+                    android:id="@+id/tvSeasons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Episodes : 50"
+                    android:id="@+id/tvEpisode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   />
+                <LinearLayout
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:text="On Air: 18:30  "
+                        android:id="@+id/tvAiredTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        />
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:text="Days : Sunday"
+                        android:id="@+id/tvAirDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        />
+                </LinearLayout>
+                <android.support.v7.widget.CardView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/lrInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/tvGenres"
+                        android:textAlignment="center"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GENRES: Action,Comedy,Fantasy, ..."
+                        />
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivTumbnail"
+            android:padding="5dp"
+            android:id="@+id/tvSummary"
+            android:layout_marginTop="10dp" />
+
+        <RatingBar
+            android:id="@+id/rtRating"
+            android:layout_below="@id/tvSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSummary"
+            android:layout_alignParentRight="true"
+            android:elevation="10dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_star_border_white_24dp"/>
+
+    </RelativeLayout
+>
+
+
+
+</android.support.v7.widget.CardView>
