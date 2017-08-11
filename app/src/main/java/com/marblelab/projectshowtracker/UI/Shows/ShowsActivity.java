@@ -25,6 +25,8 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.marblelab.projectshowtracker.Data.Shows.Image;
+import com.marblelab.projectshowtracker.Data.Shows.Shows;
+import com.marblelab.projectshowtracker.Features.Feature;
 import com.marblelab.projectshowtracker.R;
 import com.nex3z.togglebuttongroup.MultiSelectToggleGroup;
 import com.nex3z.togglebuttongroup.ToggleButtonGroup;
@@ -65,6 +67,9 @@ public class ShowsActivity extends AppCompatActivity {
     private MultiSelectToggleGroup mFilters;
     private HashMap<Integer,String> mGenresIds;
     private List<String> mFilterList;
+
+
+    private ShowsFragment showsFragment;
 
 
 
@@ -128,7 +133,7 @@ public class ShowsActivity extends AppCompatActivity {
 
         android.app.FragmentManager fragmentManager=getFragmentManager();
         android.app.FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        ShowsFragment showsFragment=ShowsFragment.newInstance();
+        showsFragment=ShowsFragment.newInstance();
         fragmentTransaction.replace(R.id.flShowsFragment,showsFragment);
         fragmentTransaction.commit();
 
@@ -342,9 +347,20 @@ public class ShowsActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void acceptFilters(View view) {
         //TODO here get all the filter parameters and perform filter
+        List<Shows> filteredShows=new ArrayList<>();
+        for (String filter:mFilterList){
+
+            for (Shows show: Feature.SHOWS_LIST) {
+                if (show.getGenres().contains(filter)){
+                    filteredShows.add(show);
+                }
+            }
+
+        }
+        showsFragment.applyFilters(filteredShows);
         animateBackToOriginalPosition();
 
-        Toast.makeText(getApplicationContext(),"Works",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),filteredShows.get(1).getName(),Toast.LENGTH_SHORT).show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

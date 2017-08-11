@@ -133,6 +133,12 @@ public class ShowsFragment extends Fragment implements ShowsInterface {
 
                 showRecyclerView.setLayoutManager(new GridLayoutManager(context, Calculate.getInstance(context, 153, 228).getGrid_number()));
 
+        getShows();
+
+        return view;
+    }
+
+    private void getShows() {
         Feature.SHOWS_LIST=new ArrayList<>();
 
         mazeServices=new TvMazeApiClient().getInstance().create(TvMazeServices.class);
@@ -163,8 +169,6 @@ public class ShowsFragment extends Fragment implements ShowsInterface {
            }
 
         }
-
-        return view;
     }
 
     @Override
@@ -197,5 +201,13 @@ public class ShowsFragment extends Fragment implements ShowsInterface {
             }
         });
 
+    }
+
+    public void applyFilters(List<Shows> filteredShows) {
+        if (!filteredShows.isEmpty()){
+           showsRecyclerViewAdapter.applyFilter(filteredShows);
+        }else {
+            getShows();
+        }
     }
 }

@@ -20,6 +20,7 @@ import com.marblelab.projectshowtracker.R;
 import com.marblelab.projectshowtracker.UI.QuickInfoDialog;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,8 +46,13 @@ public class ShowsRecyclerViewAdapter extends RecyclerView.Adapter<ShowsRecycler
 
     @Override
     public void onBindViewHolder(ShowsRecyclerViewAdapter.ShowsViewHolder holder, final int position) {
-        holder.mRating.setText(String.valueOf(Feature.SHOWS_LIST.get(position).getRating().getAverage()));
-        holder.mTitle.setText(Feature.SHOWS_LIST.get(position).getName());
+        try {
+            holder.mRating.setText(String.valueOf(Feature.SHOWS_LIST.get(position).getRating().getAverage()));
+            holder.mTitle.setText(Feature.SHOWS_LIST.get(position).getName());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
 
 
         try {
@@ -83,6 +89,19 @@ public class ShowsRecyclerViewAdapter extends RecyclerView.Adapter<ShowsRecycler
     @Override
     public int getItemCount() {
         return showsList.size();
+    }
+
+    public void applyFilter(List<Shows> filteredShows) {
+        if(!filteredShows.isEmpty()){
+            showsList.clear();
+            notifyDataSetChanged();
+            showsList.addAll(filteredShows);
+            notifyDataSetChanged();
+        }else {
+            showsList.addAll(Feature.SHOWS_LIST);
+            notifyDataSetChanged();
+        }
+
     }
 
     public class ShowsViewHolder extends RecyclerView.ViewHolder {
